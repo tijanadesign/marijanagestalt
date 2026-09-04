@@ -27,11 +27,15 @@
     [data-navburger] { display: flex !important; }
     [data-navpanel] { display: grid !important; }
     [data-2col] { grid-template-columns: 1fr !important; }
-    [data-h1] { font-size: 40px; }
-    [data-h2] { font-size: 32px; }
-    [data-h3] { font-size: 20px; }
-    [data-sec] { padding-top: 64px; padding-bottom: 64px; }
-    [data-hero] { padding-top: 64px; padding-bottom: 64px; }
+    [data-h1] { font-size: 34px !important; line-height: 1.15 !important; }
+    [data-h2] { font-size: 26px !important; line-height: 1.25 !important; }
+    [data-h1], [data-h2], [data-h3] { font-weight: 700 !important; }
+    [data-h3] { font-size: 24px !important; letter-spacing: 0.02em !important; }
+    [data-stats] p { text-align: center !important; }
+    [data-sec][style*="padding: 96px 24px"], [data-sec] > div[style*="padding: 96px 24px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+    [data-sec] > div[style*="padding: 96px 24px 0"] { padding-bottom: 0 !important; }
+    [data-sec] > div[style*="padding: 32px 24px 96px"] { padding-top: 32px !important; padding-bottom: 48px !important; }
+    [data-hero] { padding-top: 32px !important; padding-bottom: 64px !important; }
   }
 </style>
 </helmet>
@@ -45,7 +49,7 @@
         <a href="psihoterapija.html" style="color: #0F373E">Terapija</a>
         <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
         <a href="teme.html" style="color: #0F373E">Teme</a>
-        <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
+        <a href="#kontakt" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
       </nav>
       <button type="button" data-navburger="1" onClick="{{ toggleMenu }}" aria-label="Meni" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 12px; border: 1px solid #DCE4E6; border-radius: 8px; background: #FFFFFF; cursor: pointer">
         <svg viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><g stroke="#154E59" stroke-width="1.5" stroke-linecap="round"><line x1="1" y1="1" x2="19" y2="1"></line><line x1="1" y1="7" x2="19" y2="7"></line><line x1="1" y1="13" x2="19" y2="13"></line></g></svg>
@@ -57,7 +61,7 @@
           <a href="psihoterapija.html" style="color: #0F373E">Terapija</a>
           <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
         <a href="teme.html" style="color: #0F373E">Teme</a>
-          <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
+          <a href="#kontakt" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
       </div>
     </sc-if>
   </header>
@@ -69,7 +73,7 @@
         <h1 data-h1="1" style="font-family: forum, serif; font-weight: 400; font-size: 60px; line-height: 1.1; margin: 0">Bezbedno mesto za razgovor o tvojim potrebama</h1>
         <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77"><span style="color: #3F6E77; font-family: Karla, sans-serif; font-size: 20px;">Radim sa mladima i odraslima koji žele bolji kontakt sa sobom, svojim osećanjima i ljudima oko sebe. <br><br>Radim uživo i onlajn. <br><br>Prvi razgovor je besplatan i ne obavezuje te ni na šta.</span></p>
         <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
-          <a href="#zakazivanje" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 20px; font-weight: 500" style-hover="background: #12424C">Zakaži besplatan razgovor</a>
+          <a href="#kontakt" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 20px; font-weight: 500" style-hover="background: #12424C">Zakaži besplatan razgovor</a>
           <a href="psihoterapija.html#kako-izgleda" style="padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 20px" style-hover="background: #DCE4E6">Kako izgleda terapija</a>
         </div>
       </div>
@@ -79,7 +83,7 @@
     </div>
   </section>
 
-  <section data-sec="1" style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+  <section data-sec="1" data-stats="1" style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
     <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
       <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">9</p><p style="font-size: 20px; line-height: 1.5; margin: 0">godina rada sa klijentima</p></div>
       <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">180+</p><p style="font-size: 20px; line-height: 1.5; margin: 0">ljudi koji su prošli terapiju kod mene</p></div>
@@ -116,13 +120,13 @@
       <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Dobro je da znaš u šta se upuštaš</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 48px">
         <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px; background: #FFFFFF; display: flex; flex-direction: column">
-          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Šta je psihoterapija</h3>
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Šta je psihoterapija?</h3>
           <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">Razgovor sa obučenom osobom, jednom nedeljno. Ništa što kažeš ne izlazi iz sobe.</p>
           <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">Ne moraš da budeš u krizi da bi došao. Dovoljno je da ti nešto smeta duže od nekoliko meseci i da samo ne prolazi.</p>
           <a href="psihoterapija.html" style="margin: 32px 0 0; align-self: flex-start; padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 20px" style-hover="background: #DCE4E6">Više o psihoterapiji</a>
         </article>
         <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px; background: #FFFFFF; display: flex; flex-direction: column">
-          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Šta je geštalt terapija</h3>
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Šta je geštalt terapija?</h3>
           <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">Geštalt se bavi onim što se dešava sada i ovde. Kako dišeš dok pričaš o majci, gde ti se stegne kad kažeš da ti je dobro.</p>
           <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">Manje pričamo o prošlosti, više isprobavamo nove načine da kažeš ono što obično prećutiš.</p>
           <a href="gestalt.html" style="margin: 32px 0 0; align-self: flex-start; padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 20px" style-hover="background: #DCE4E6">Više o geštaltu</a>
@@ -135,7 +139,7 @@
   <section data-sec="1">
     <div style="max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: stretch" data-2col="1">
       <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px">
-        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.2; margin: 0; max-width: 20ch">Šta je cilj psihoterapije?</h2>
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.2; margin: 0; max-width: 20ch">Šta je cilj psihoterapije?</h3>
         <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Cilj psihoterapije nije da postanete neka druga osoba niti da vam neko kaže kako treba da živite. Cilj je da bolje razumete sebe - svoje potrebe, osećanja, granice, obrasce ponašanja i načine na koje gradite odnose sa drugima.</p>
         <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Kroz taj proces dobijate prostor da živite autentičnije.</p>
         <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Autentičnost znači živeti u skladu sa sobom. Prepoznati šta zaista osećate, šta vam je potrebno i šta vam je važno, umesto da automatski sledite očekivanja drugih ili obrasce koje ste vremenom usvojili.</p>
@@ -199,7 +203,7 @@
           <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Uvodni razgovor</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">30 minuta, besplatno</dd></div>
         </dl>
       </div>
-      <div style="border: 1px solid #DCE4E6; border-radius: 8px; background: #DCE4E6; padding: 32px">
+      <div id="kontakt" style="border: 1px solid #DCE4E6; border-radius: 8px; background: #DCE4E6; padding: 32px; scroll-margin-top: 80px">
         <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Zakaži besplatan uvodni razgovor</h3>
         <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">Napiši mi u par rečenica šta te muči i kada ti odgovara. Odgovaram u roku od 24h.</p>
         <div style="display: grid; gap: 16px; margin-top: 32px">
