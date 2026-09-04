@@ -26,11 +26,12 @@
     [data-navdesktop] { display: none !important; }
     [data-navburger] { display: flex !important; }
     [data-navpanel] { display: grid !important; }
-    [data-h1] { font-size: 34px !important; line-height: 1.15 !important; }
-    [data-h2] { font-size: 26px !important; line-height: 1.25 !important; }
+    [data-h1] { font-size: 38px !important; line-height: 1.15 !important; }
+    [data-h2] { font-size: 30px !important; line-height: 1.25 !important; }
     [data-h1], [data-h2], [data-h3] { font-weight: 700 !important; }
-    [data-h3] { font-size: 24px !important; letter-spacing: 0.02em !important; }
+    [data-h3] { font-size: 26px !important; letter-spacing: 0.02em !important; }
     [data-stats] p { text-align: center !important; }
+    [data-stats] div > p:first-child { font-size: 30px !important; }
     [data-2col] { grid-template-columns: 1fr !important; }
     [data-sec][style*="padding: 96px 24px"], [data-sec] > div[style*="padding: 96px 24px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
     [data-sec] > div[style*="padding: 96px 24px 0"] { padding-bottom: 0 !important; }
@@ -92,7 +93,7 @@
   </section>
 
   <section data-sec="1" style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 64px; align-items: start">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px 64px; align-items: start">
       <div>
         <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Moja priča</p>
         <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Kako sam došla do ovog posla</h2>
@@ -107,7 +108,7 @@
   </section>
 
   <section data-sec="1" style="background: #154E59">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 64px; align-items: start">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px 64px; align-items: start">
       <div>
         <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF; margin: 0 0 24px">Kako radim</p>
         <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch; color: #FFFFFF">Šta možete da očekujete od mene</h2>
@@ -123,7 +124,7 @@
   <section data-sec="1" style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
     <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Obrazovanje</p>
     <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Školovanje i stručni rad</h2>
-    <dl style="margin: 48px 0 0">
+    <dl style="margin: 24px 0 0">
       <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">2013 - 2017</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 65ch">Četvorogodišnja edukacija iz geštalt psihoterapije, Geštalt studio Beograd</dd></div>
       <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">2008 - 2013</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 65ch">Diplomirani psiholog, Filozofski fakultet u Beogradu</dd></div>
       <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Stalno</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 65ch">Redovna supervizija i lična terapija, članica Saveza društava psihoterapeuta Srbije</dd></div>
@@ -132,10 +133,10 @@
   </section>
 
   <section id="zakazivanje" data-sec="1" style="border-top: 1px solid #DCE4E6">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px 64px; align-items: start">
       <div>
         <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0">Informacije</h2>
-        <dl style="margin: 48px 0 0">
+        <dl style="margin: 24px 0 0">
           <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Uživo</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Njegoševa 54, Vračar, Beograd</dd></div>
           <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Onlajn</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Video poziv</dd></div>
           <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Trajanje</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">60 minuta</dd></div>
