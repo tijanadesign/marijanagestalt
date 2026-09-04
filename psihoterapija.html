@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img, svg { max-width: 100%; }
+  a { color: #154E59; text-decoration: none; }
+  a:hover { color: #12424C; }
+  ::selection { background: #DCE4E6; }
+  a[style*="border-radius: 999px"], button { display: inline-block; line-height: 1.2; }
+  [data-navburger] { display: none !important; }
+  [data-navpanel] { display: none !important; }
+  @media (max-width: 768px) {
+    [data-navdesktop] { display: none !important; }
+    [data-navburger] { display: flex !important; }
+    [data-navpanel] { display: grid !important; }
+    [data-h1] { font-size: 40px; }
+    [data-h2] { font-size: 32px; }
+    [data-h3] { font-size: 20px; }
+    [data-sec] { padding-top: 64px; padding-bottom: 64px; }
+    [data-hero] { padding-top: 32px; padding-bottom: 64px; }
+  }
+</style>
+</helmet>
+<div style="font-family: Karla, system-ui, sans-serif; color: #0F373E; background: #FFFFFF">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="index.html" style="font-family: forum, serif; font-weight: 700; font-size: 20px; color: #0F373E">Marijana Janković</a>
+      <nav data-navdesktop="1" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 20px">
+        <a href="o-meni.html" style="color: #0F373E">O meni</a>
+        <a href="psihoterapija.html" style="color: #154E59; font-weight: 500">Terapija</a>
+        <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
+        <a href="teme.html" style="color: #0F373E">Teme</a>
+        <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
+      </nav>
+      <button type="button" data-navburger="1" onClick="{{ toggleMenu }}" aria-label="Meni" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 12px; border: 1px solid #DCE4E6; border-radius: 8px; background: #FFFFFF; cursor: pointer">
+        <svg viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><g stroke="#154E59" stroke-width="1.5" stroke-linecap="round"><line x1="1" y1="1" x2="19" y2="1"></line><line x1="1" y1="7" x2="19" y2="7"></line><line x1="1" y1="13" x2="19" y2="13"></line></g></svg>
+      </button>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div data-navpanel="1" style="display: grid; gap: 24px; padding: 24px; border-top: 1px solid #DCE4E6; font-size: 20px; background: #FFFFFF">
+        <a href="o-meni.html" style="color: #0F373E">O meni</a>
+          <a href="psihoterapija.html" style="color: #154E59; font-weight: 500">Terapija</a>
+          <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
+        <a href="teme.html" style="color: #0F373E">Teme</a>
+          <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <section data-hero="1" style="max-width: 1100px; margin: 0 auto; padding: 64px 24px 96px">
+    <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Psihoterapija</p>
+    <h1 data-h1="1" style="font-family: forum, serif; font-weight: 400; font-size: 60px; line-height: 1.1; margin: 0; max-width: 22ch">Šta je psihoterapija?</h1>
+    <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Da li je psihoterapija za mene? Da li stvarno pomaže? Kako izgleda? Šta ćemo tamo da radimo?</p>
+    <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Ako ste se ikada zapitali nešto od ovoga, niste jedini. Odlazak na psihoterapiju često prati mnogo pitanja, posebno ako se sa njom susrećete prvi put.</p>
+    <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Psihoterapija je proces koji vam pomaže da bolje razumete sebe, svoje misli, osećanja, reakcije i ponašanja. Ona može biti prostor u kojem ćete otvoreno govoriti o onome što vas opterećuje, bez osuđivanja i potrebe da imate sve odgovore.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
+      <a href="#zakazivanje" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 20px; font-weight: 500" style-hover="background: #12424C">Zakaži besplatan razgovor</a>
+    </div>
+  </section>
+
+  <section data-sec="1" style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">9</p><p style="font-size: 20px; line-height: 1.5; margin: 0">godina rada sa klijentima</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">180+</p><p style="font-size: 20px; line-height: 1.5; margin: 0">ljudi koji su prošli terapiju kod mene</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">60</p><p style="font-size: 20px; line-height: 1.5; margin: 0">minuta traje jedna seansa</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">Vračar</p><p style="font-size: 20px; line-height: 1.5; margin: 0">kancelarija u Beogradu, i onlajn</p></div>
+    </div>
+  </section>
+
+  <section data-sec="1" style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 64px; align-items: start">
+      <div>
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Za koga je psihoterapija?</h2>
+        <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Psihoterapija je za svakoga ko želi da bolje razume sebe i ono kroz šta prolazi. Ne morate biti u krizi niti imati „dovoljno veliki“ problem da biste potražili podršku.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Možda se osećate zaglavljeno, prolazite kroz težak period, ponavljate iste obrasce u odnosima ili jednostavno želite da bolje razumete svoje misli, osećanja i potrebe.</p>
+      </div>
+      <div style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Da li mi je potrebna psihoterapija?</h3>
+        <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Ako osećate da vas nešto dugo opterećuje, da se vrtite u krug ili sami ne uspevate da pronađete način da napravite promenu, razgovor sa terapeutom može pomoći.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Ne morate čekati da problem postane nepodnošljiv da biste potražili podršku.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kako-izgleda" data-sec="1" style="border-top: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+      <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Kako to izgleda</p>
+      <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Od prvog susreta do procesa</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px">
+        <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Kako terapeut može da pomogne?</h3>
+          <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Terapeut vam ne govori šta treba da radite niti donosi odluke umesto vas.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Kroz razgovor i pitanja pomoći će vam da sagledate svoju situaciju iz nove perspektive, prepoznate obrasce koji vas koče i pronađete načine da napravite promene koje su važne upravo vama.</p>
+        </article>
+        <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Kako izgleda prvi susret?</h3>
+          <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Prvi susret je prilika da se upoznate sa terapeutom i razgovarate o onome što vas je dovelo na terapiju.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Ne morate unapred znati šta želite da kažete - dovoljno je da krenete od onoga što vas trenutno najviše opterećuje.</p>
+        </article>
+      </div>
+      <div style="margin-top: 32px; border-radius: 8px; background: #154E59; padding: 32px">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #FFFFFF">Kako izgleda terapijski proces?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #DCE4E6">Terapijski proces je zajednički rad koji se razvija u skladu sa vašim potrebama i tempom. Ne postoji isti put za svakoga niti unapred određen scenario.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #DCE4E6">A kako to zapravo izgleda? Sedimo i razgovaramo. Možete da sedite gde vam je najudobnije - na sofi, stolici ili podu, i da se izujete ako želite.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #DCE4E6">Ja postavljam pitanja, a vi ne morate unapred da znate odgovore niti odakle da počnete. Često se odgovori pojave kroz sam razgovor, nekada do kraja seanse, a nekada i kasnije.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="1" style="border-top: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+      <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Česta pitanja</p>
+      <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Ono što ljudi pitaju pre prvog dolaska</h2>
+      <div style="margin-top: 48px">
+        <div style="border-top: 1px solid #DCE4E6; padding: 32px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Koliko traje terapija?</h3>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77; max-width: 65ch">Ne postoji unapred određen broj susreta. Trajanje procesa zavisi od vaših potreba, tema na kojima radite i ciljeva koje želite da ostvarite.</p>
+        </div>
+        <div style="border-top: 1px solid #DCE4E6; padding: 32px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Da li psihoterapija pomaže?</h3>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77; max-width: 65ch">Psihoterapija nije brzo i univerzalno rešenje, ali može pomoći da bolje razumete sebe, svoje obrasce i način na koji se odnosite prema sebi i drugima. Promene zahtevaju vreme i aktivno učešće u procesu.</p>
+        </div>
+        <div style="border-top: 1px solid #DCE4E6; padding: 32px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Kako pronaći dobrog psihoterapeuta?</h3>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77; max-width: 65ch">Pored obrazovanja i stručnosti, važan je i odnos koji gradite sa terapeutom. Važno je da se osećate dovoljno sigurno da možete otvoreno razgovarati i da vam njegov pristup odgovara.</p>
+        </div>
+        <div style="border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6; padding: 32px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Šta ako mi se terapeut ne svidi ili mi bude neprijatno?</h3>
+          <div style="max-width: 65ch; display: grid; gap: 16px">
+            <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Odnos sa terapeutom gradi se vremenom, a određena doza neprijatnosti može biti prirodan deo razgovora o ličnim i teškim temama. Ipak, važno je da se osećate dovoljno sigurno da možete otvoreno govoriti.</p>
+            <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ako vam nešto u odnosu sa terapeutom ne odgovara, pokušajte da mu to kažete. Razgovor o tome može biti važan deo terapijskog procesa.</p>
+            <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ako ni nakon razgovora ne osećate da možete izgraditi odnos poverenja, u redu je da potražite drugog terapeuta. Ponekad je potrebno razgovarati sa nekoliko njih pre nego što pronađete osobu sa kojom osećate da možete dobro da radite.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="1" style="background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+      <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Cilj</p>
+      <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Šta je cilj psihoterapije?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px">
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #0F373E">Cilj psihoterapije nije da postanete neka druga osoba niti da vam neko kaže kako treba da živite. Cilj je da bolje razumete sebe - svoje potrebe, osećanja, granice, obrasce ponašanja i načine na koje gradite odnose sa drugima. Kroz taj proces dobijate prostor da živite autentičnije.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #0F373E">Autentičnost znači živeti u skladu sa sobom. Prepoznati šta zaista osećate, šta vam je potrebno i šta vam je važno, umesto da automatski sledite očekivanja drugih ili obrasce koje ste vremenom usvojili. To ne znači da ćemo uvek znati šta želimo. Znači da imamo više svesnosti i slobode da biramo način na koji želimo da živimo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="zakazivanje" data-sec="1" style="border-top: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+      <div>
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0">Informacije</h2>
+        <dl style="margin: 48px 0 0">
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Uživo</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Njegoševa 54, Vračar, Beograd</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Onlajn</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Video poziv</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Trajanje</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">60 minuta</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Cena</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">{{ cena }} po seansi</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Uvodni razgovor</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">30 minuta, besplatno</dd></div>
+        </dl>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px">
+          <a href="index.html" style="padding: 16px 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #154E59; color: #154E59; font-size: 20px" style-hover="background: #DCE4E6">Nazad na početnu</a>
+        </div>
+      </div>
+      <div style="border: 1px solid #DCE4E6; border-radius: 8px; background: #DCE4E6; padding: 32px">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Zakaži besplatan uvodni razgovor</h3>
+        <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Napiši mi u par rečenica šta te muči i kada ti odgovara. Odgovaram u roku od 24h.</p>
+        <div style="display: grid; gap: 16px; margin-top: 32px">
+          <input type="text" placeholder="Ime" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E" />
+          <input type="text" placeholder="Telefon ili mejl" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E" />
+          <textarea rows="4" placeholder="Šta te dovodi" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E; resize: vertical"></textarea>
+          <button type="button" style="font-family: Karla, sans-serif; font-size: 20px; font-weight: 500; padding: 16px 32px; border: none; border-radius: 999px; background: #154E59; color: #FFFFFF; cursor: pointer" style-hover="background: #12424C">Pošalji poruku</button>
+        </div>
+        <p style="font-size: 20px; line-height: 1.5; margin: 24px 0 0; color: #3F6E77">Ili pozovi na <a href="tel:+381641234567">064 123 4567</a>. Ako si u krizi i treba ti pomoć odmah, pozovi Centar Srce na 0800 300 303.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; font-size: 20px">
+      <div style="display: grid; gap: 8px">
+        <span style="font-family: forum, serif">Marijana Geštalt</span>
+        <span style="color: #3F6E77">Njegoševa 54, Beograd</span>
+        <span style="color: #3F6E77">064 123 4567</span>
+      </div>
+      <div style="display: grid; gap: 8px">
+        <a href="o-meni.html" style="color: #0F373E">O meni</a>
+        <a href="psihoterapija.html" style="color: #0F373E">Terapija</a>
+        <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
+        <a href="teme.html" style="color: #0F373E">Teme</a>
+      </div>
+      <div style="display: grid; gap: 8px">
+        <a href="#" style="color: #0F373E">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;cena&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;4.000 dinara&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  componentDidMount() {
+    const h = location.hash;
+    if (!h || h.length < 2) return;
+    let tries = 0;
+    const go = () => {
+      const el = document.querySelector(h);
+      if (el) {
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 80 });
+      } else if (tries++ < 20) setTimeout(go, 100);
+    };
+    setTimeout(go, 100);
+  }
+  renderVals() {
+    return {
+      cena: this.props.cena ?? "4.000 dinara",
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
+</script>
+</body>
+</html>

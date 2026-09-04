@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img, svg { max-width: 100%; }
+  a { color: #154E59; text-decoration: none; }
+  a:hover { color: #12424C; }
+  ::selection { background: #DCE4E6; }
+  a[style*="border-radius: 999px"], button { display: inline-block; line-height: 1.2; }
+  [data-navburger] { display: none !important; }
+  [data-navpanel] { display: none !important; }
+  @media (max-width: 768px) {
+    [data-navdesktop] { display: none !important; }
+    [data-navburger] { display: flex !important; }
+    [data-navpanel] { display: grid !important; }
+    [data-2col] { grid-template-columns: 1fr !important; }
+    [data-h1] { font-size: 40px; }
+    [data-h2] { font-size: 32px; }
+    [data-h3] { font-size: 20px; }
+    [data-sec] { padding-top: 64px; padding-bottom: 64px; }
+    [data-hero] { padding-top: 64px; padding-bottom: 64px; }
+  }
+</style>
+</helmet>
+<div style="font-family: Karla, system-ui, sans-serif; color: #0F373E; background: #FFFFFF">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="index.html" style="font-family: forum, serif; font-weight: 700; font-size: 20px; color: #0F373E">Marijana Janković</a>
+      <nav data-navdesktop="1" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 20px">
+        <a href="o-meni.html" style="color: #0F373E">O meni</a>
+        <a href="psihoterapija.html" style="color: #0F373E">Terapija</a>
+        <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
+        <a href="teme.html" style="color: #154E59; font-weight: 500">Teme</a>
+        <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
+      </nav>
+      <button type="button" data-navburger="1" onClick="{{ toggleMenu }}" aria-label="Meni" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 12px; border: 1px solid #DCE4E6; border-radius: 8px; background: #FFFFFF; cursor: pointer">
+        <svg viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><g stroke="#154E59" stroke-width="1.5" stroke-linecap="round"><line x1="1" y1="1" x2="19" y2="1"></line><line x1="1" y1="7" x2="19" y2="7"></line><line x1="1" y1="13" x2="19" y2="13"></line></g></svg>
+      </button>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div data-navpanel="1" style="display: grid; gap: 24px; padding: 24px; border-top: 1px solid #DCE4E6; font-size: 20px; background: #FFFFFF">
+        <a href="o-meni.html" style="color: #0F373E">O meni</a>
+        <a href="psihoterapija.html" style="color: #0F373E">Terapija</a>
+        <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
+        <a href="teme.html" style="color: #154E59; font-weight: 500">Teme</a>
+        <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Zakaži razgovor</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <section data-hero="1" style="max-width: 1100px; margin: 0 auto; padding: 64px 24px 96px">
+    <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Teme</p>
+    <h1 data-h1="1" style="font-family: forum, serif; font-weight: 400; font-size: 60px; line-height: 1.1; margin: 0; max-width: 22ch">Sa čim ljudi dolaze i kako radim sa tim</h1>
+    <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Ispod su teme sa kojima mi se ljudi najčešće javljaju. Kod svake piše kako to obično izgleda i šta možete da očekujete od rada sa mnom.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
+      <a href="#zakazivanje" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 20px; font-weight: 500" style-hover="background: #12424C">Zakaži besplatan razgovor</a>
+    </div>
+  </section>
+
+  <section data-sec="1" style="background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+      <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Pregled</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, auto); grid-auto-flow: column; gap: 14px 40px">
+        <a href="#anksioznost" style="font-size: 20px; line-height: 1.5; color: #0F373E">Anksioznost i napetost</a>
+        <a href="#tuga" style="font-size: 20px; line-height: 1.5; color: #0F373E">Tuga i neraspoloženje</a>
+        <a href="#samopouzdanje" style="font-size: 20px; line-height: 1.5; color: #0F373E">Nisko samopouzdanje</a>
+        <a href="#odnosi" style="font-size: 20px; line-height: 1.5; color: #0F373E">Problemi u odnosima</a>
+        <a href="#granice" style="font-size: 20px; line-height: 1.5; color: #0F373E">Teško postavljanje granica</a>
+        <a href="#stres" style="font-size: 20px; line-height: 1.5; color: #0F373E">Stres i preopterećenost</a>
+        <a href="#gubitak" style="font-size: 20px; line-height: 1.5; color: #0F373E">Gubitak i raskidi</a>
+        <a href="#promene" style="font-size: 20px; line-height: 1.5; color: #0F373E">Životne promene i krize</a>
+        <a href="#obrasci" style="font-size: 20px; line-height: 1.5; color: #0F373E">Ponavljajući obrasci ponašanja</a>
+        <a href="#nesigurnost" style="font-size: 20px; line-height: 1.5; color: #0F373E">Preispitivanje i nesigurnost</a>
+        <a href="#emocije" style="font-size: 20px; line-height: 1.5; color: #0F373E">Teškoće sa emocijama</a>
+        <a href="#razvoj" style="font-size: 20px; line-height: 1.5; color: #0F373E">Potraga za sobom i lični razvoj</a>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="1" style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+      <article id="anksioznost" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Anksioznost i napetost</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="tuga" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Tuga i neraspoloženje</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="samopouzdanje" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Nisko samopouzdanje</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="odnosi" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Problemi u odnosima</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="granice" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Teško postavljanje granica</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="stres" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Stres i preopterećenost</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="gubitak" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Gubitak i raskidi</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="promene" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Životne promene i krize</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="obrasci" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Ponavljajući obrasci ponašanja</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="nesigurnost" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Preispitivanje i nesigurnost</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="emocije" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Teškoće sa emocijama</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+      <article id="razvoj" style="border-top: 1px solid #DCE4E6; padding: 48px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start" data-2col="1">
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; max-width: 20ch">Potraga za sobom i lični razvoj</h2>
+        <div style="max-width: 65ch; display: grid; gap: 24px">
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Ovde opišite kako ova teškoća izgleda iz klijentove perspektive - šta ljudi obično kažu kad dođu sa ovim, kako se to javlja u svakodnevnom životu.</p>
+          <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">U drugom pasusu napišite kako biste pristupili osobi sa ovim problemom - šta bi bio prvi korak, na čemu radite, šta klijent može da očekuje.</p>
+        </div>
+      </article>
+  </section>
+
+  <section id="zakazivanje" data-sec="1" style="border-top: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+      <div>
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0">Informacije</h2>
+        <dl style="margin: 48px 0 0">
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Uživo</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Njegoševa 54, Vračar, Beograd</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Onlajn</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Video poziv</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Trajanje</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">60 minuta</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Cena</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">{{ cena }} po seansi</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Uvodni razgovor</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">30 minuta, besplatno</dd></div>
+        </dl>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px">
+          <a href="index.html" style="padding: 16px 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #154E59; color: #154E59; font-size: 20px" style-hover="background: #DCE4E6">Nazad na početnu</a>
+        </div>
+      </div>
+      <div style="border: 1px solid #DCE4E6; border-radius: 8px; background: #DCE4E6; padding: 32px">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Zakaži besplatan uvodni razgovor</h3>
+        <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Napiši mi u par rečenica šta te muči i kada ti odgovara. Odgovaram u roku od 24h.</p>
+        <div style="display: grid; gap: 16px; margin-top: 32px">
+          <input type="text" placeholder="Ime" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E" />
+          <input type="text" placeholder="Telefon ili mejl" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E" />
+          <textarea rows="4" placeholder="Šta te dovodi" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E; resize: vertical"></textarea>
+          <button type="button" style="font-family: Karla, sans-serif; font-size: 20px; font-weight: 500; padding: 16px 32px; border: none; border-radius: 999px; background: #154E59; color: #FFFFFF; cursor: pointer" style-hover="background: #12424C">Pošalji poruku</button>
+        </div>
+        <p style="font-size: 20px; line-height: 1.5; margin: 24px 0 0; color: #3F6E77">Ili pozovi na <a href="tel:+381641234567">064 123 4567</a>. Ako si u krizi i treba ti pomoć odmah, pozovi Centar Srce na 0800 300 303.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; font-size: 20px">
+      <div style="display: grid; gap: 8px">
+        <span style="font-family: forum, serif; font-weight: 700">Marijana Janković</span>
+        <span style="color: #3F6E77">Njegoševa 54, Beograd</span>
+        <span style="color: #3F6E77">064 123 4567</span>
+      </div>
+      <div style="display: grid; gap: 8px">
+        <a href="o-meni.html" style="color: #0F373E">O meni</a>
+        <a href="psihoterapija.html" style="color: #0F373E">Terapija</a>
+        <a href="gestalt.html" style="color: #0F373E">Geštalt</a>
+        <a href="teme.html" style="color: #0F373E">Teme</a>
+      </div>
+      <div style="display: grid; gap: 8px">
+        <a href="#" style="color: #0F373E">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;cena&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;4.000 dinara&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      cena: this.props.cena ?? "4.000 dinara",
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
+</script>
+</body>
+</html>
