@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Forum&amp;family=Karla:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img, svg { max-width: 100%; }
+  a { color: #154E59; text-decoration: none; }
+  a:hover { color: #12424C; }
+  ::selection { background: #DCE4E6; }
+  a[style*="border-radius: 999px"], button { display: inline-block; line-height: 1.2; }
+  [data-navburger] { display: none !important; }
+  [data-navpanel] { display: none !important; }
+  @media (max-width: 768px) {
+    [data-navdesktop] { display: none !important; }
+    [data-navburger] { display: flex !important; }
+    [data-navpanel] { display: grid !important; }
+    [data-h1] { font-size: 38px !important; line-height: 1.15 !important; }
+    [data-h2] { font-size: 30px !important; line-height: 1.25 !important; }
+    [data-h1], [data-h2], [data-h3] { font-weight: 700 !important; }
+    [data-h3] { font-size: 26px !important; letter-spacing: 0.02em !important; }
+    p[style*="font-size: 20px"], li[style*="font-size: 20px"], dd[style*="font-size: 20px"], dt[style*="font-size: 20px"], a[style*="font-size: 20px"], span[style*="font-size: 20px"], div[style*="font-size: 20px"], label[style*="font-size: 20px"], input[style*="font-size: 20px"], textarea[style*="font-size: 20px"], button[style*="font-size: 20px"] { font-size: 16px !important; }
+    [data-stats] p { text-align: center !important; }
+    [data-stats] div > p:first-child { font-size: 30px !important; }
+    [data-2col] { grid-template-columns: 1fr !important; }
+    [data-sec][style*="padding: 96px 24px"], [data-sec] > div[style*="padding: 96px 24px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+    [data-sec] > div[style*="padding: 96px 24px 0"] { padding-bottom: 0 !important; }
+    [data-sec] > div[style*="padding: 32px 24px 96px"] { padding-top: 32px !important; padding-bottom: 48px !important; }
+    [data-hero] { padding-top: 32px !important; padding-bottom: 64px !important; }
+  }
+</style>
+</helmet>
+<div style="font-family: Karla, system-ui, sans-serif; color: #0F373E; background: #FFFFFF">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="index-en.html" style="font-family: forum, serif; font-weight: 700; font-size: 20px; color: #0F373E">Fiona MacGregor</a>
+      <nav data-navdesktop="1" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 20px">
+        <a href="about-en.html" style="color: #154E59; font-weight: 400">About</a>
+        <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
+        <a href="gestalt-en.html" style="color: #0F373E">Gestalt</a>
+        <a href="topics-en.html" style="color: #0F373E">Topics</a>
+        <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 16px; letter-spacing: 0.04em"><a href="o-meni.html" style="color: #3F6E77">SR</a><span style="color: #9FB6BA">/</span><span style="color: #154E59; font-weight: 600">EN</span></span>
+      </nav>
+      <button type="button" data-navburger="1" onClick="{{ toggleMenu }}" aria-label="Menu" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 12px; border: 1px solid #DCE4E6; border-radius: 8px; background: #FFFFFF; cursor: pointer">
+        <svg viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><g stroke="#154E59" stroke-width="1.5" stroke-linecap="round"><line x1="1" y1="1" x2="19" y2="1"></line><line x1="1" y1="7" x2="19" y2="7"></line><line x1="1" y1="13" x2="19" y2="13"></line></g></svg>
+      </button>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div data-navpanel="1" style="display: grid; gap: 24px; padding: 24px; border-top: 1px solid #DCE4E6; font-size: 20px; background: #FFFFFF">
+        <a href="about-en.html" style="color: #154E59; font-weight: 400">About</a>
+          <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
+          <a href="gestalt-en.html" style="color: #0F373E">Gestalt</a>
+        <a href="topics-en.html" style="color: #0F373E">Topics</a>
+          <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 16px; letter-spacing: 0.04em"><a href="o-meni.html" style="color: #3F6E77">SR</a><span style="color: #9FB6BA">/</span><span style="color: #154E59; font-weight: 600">EN</span></span>
+      </div>
+    </sc-if>
+  </header>
+
+  <section data-hero="1" style="max-width: 1100px; margin: 0 auto; padding: 64px 24px 96px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center">
+      <div>
+        <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">About me</p>
+        <h1 data-h1="1" style="font-family: forum, serif; font-weight: 700; font-size: 60px; line-height: 1.1; margin: 0; max-width: 18ch">Fiona MacGregor</h1>
+        <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Gestalt psychotherapist. I work with individuals and couples, in person in Edinburgh's New Town and online over video call.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
+          <a href="#zakazivanje" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 20px; font-weight: 500" style-hover="background: #12424C">Book a free call</a>
+        </div>
+      </div>
+      <div style="aspect-ratio: 3 / 4; border: 1px solid #C6A15B; border-radius: 8px; overflow: hidden">
+        <img src="uploads/smiley-woman-outdoors-front-view.jpg" alt="Fiona MacGregor" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block">
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="1" data-stats="1" style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">9</p><p style="font-size: 20px; line-height: 1.5; margin: 0">years working with clients</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">180+</p><p style="font-size: 20px; line-height: 1.5; margin: 0">people who have been in therapy with me</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">60</p><p style="font-size: 20px; line-height: 1.5; margin: 0">minutes per session</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">New Town</p><p style="font-size: 20px; line-height: 1.5; margin: 0">practice in Edinburgh, and online</p></div>
+    </div>
+  </section>
+
+  <section data-sec="1" style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px 64px; align-items: start">
+      <div>
+        <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">My story</p>
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">How I came to this work</h2>
+      </div>
+      <div style="max-width: 65ch; display: grid; gap: 24px">
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">Write your personal story here: where you are from, what you did before therapy and what brought you to gestalt.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">In the second paragraph you can say something about your own first experience of therapy, as a client. People read this most carefully, because they are looking for a sign that you understand first-hand.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">In the third paragraph say what matters most to you in this work and what a good therapeutic relationship looks like to you. No clichés, just what you would say out loud.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #3F6E77">If you like, add something personal from outside work: what rests you, what you do when you are not working.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="1" style="background: #154E59">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px 64px; align-items: start">
+      <div>
+        <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF; margin: 0 0 24px">How I work</p>
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch; color: #FFFFFF">What you can expect from me</h2>
+      </div>
+      <div style="max-width: 65ch; display: grid; gap: 16px">
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #DCE4E6">In therapy I do not give advice and I will not tell you how to live. I will ask what you feel as you tell me, and what is happening in your body.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #DCE4E6">We go at your pace. If a topic is not ready to open yet, we will not force it.</p>
+        <p style="font-size: 20px; line-height: 1.6; margin: 0; color: #DCE4E6">Everything you say stays between us. I discuss my work with a supervisor, without any details that could identify you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="1" style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+    <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Education</p>
+    <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">Training and professional work</h2>
+    <dl style="margin: 24px 0 0">
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">2013 - 2017</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 65ch">Four-year training in gestalt psychotherapy, Scottish Gestalt Centre, Edinburgh</dd></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">2008 - 2013</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 65ch">MA (Hons) in Psychology, University of Edinburgh</dd></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Ongoing</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 65ch">Regular supervision and personal therapy, registered member of COSCA and the UK Council for Psychotherapy</dd></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Seminars</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 65ch">Trauma work, couples work, the body-oriented approach in gestalt</dd></div>
+    </dl>
+  </section>
+
+  <section id="zakazivanje" data-sec="1" style="border-top: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px 64px; align-items: start">
+      <div>
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0">Practical details</h2>
+        <dl style="margin: 24px 0 0">
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">In person</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">18 Dundas Street, New Town, Edinburgh</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Online</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Video call</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Duration</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">60 minutes</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Price</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">{{ cena }} per session</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Intro call</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">30 minutes, free</dd></div>
+        </dl>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px">
+          <a href="index-en.html" style="padding: 16px 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #154E59; color: #154E59; font-size: 20px" style-hover="background: #DCE4E6">Back to home</a>
+        </div>
+      </div>
+      <div style="border: 1px solid #DCE4E6; border-radius: 8px; background: #DCE4E6; padding: 32px">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Book a free intro call</h3>
+        <p style="font-size: 20px; line-height: 1.6; margin: 16px 0 0; color: #3F6E77">Write me a couple of sentences about what is troubling you and when suits you. I reply within 24 hours.</p>
+        <div style="display: grid; gap: 16px; margin-top: 32px">
+          <input type="text" placeholder="Name" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E">
+          <input type="text" placeholder="Phone or email" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E">
+          <textarea rows="4" placeholder="What brings you here" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E; resize: vertical"></textarea>
+          <button type="button" style="font-family: Karla, sans-serif; font-size: 20px; font-weight: 500; padding: 16px 32px; border: none; border-radius: 999px; background: #154E59; color: #FFFFFF; cursor: pointer" style-hover="background: #12424C">Send message</button>
+        </div>
+        <p style="font-size: 20px; line-height: 1.5; margin: 24px 0 0; color: #3F6E77">Or call <a href="tel:+441314960123">0131 496 0123</a>. If you are in crisis and need help right now, call Samaritans on 116 123 or Breathing Space on 0800 83 85 87.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; font-size: 20px">
+      <div style="display: grid; gap: 8px">
+        <span style="font-family: forum, serif; font-weight: 700">Fiona MacGregor</span>
+        <span style="color: #3F6E77">18 Dundas Street, Edinburgh</span>
+        <span style="color: #3F6E77">0131 496 0123</span>
+      </div>
+      <div style="display: grid; gap: 8px">
+        <a href="about-en.html" style="color: #0F373E">About</a>
+        <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
+        <a href="gestalt-en.html" style="color: #0F373E">Gestalt</a>
+        <a href="topics-en.html" style="color: #0F373E">Topics</a>
+      </div>
+      <div style="display: grid; gap: 8px">
+        <a href="#" style="color: #0F373E">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;cena&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;£60&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      cena: this.props.cena ?? "£60",
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Forum&amp;family=Karla:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img, svg { max-width: 100%; }
+  a { color: #154E59; text-decoration: none; }
+  a:hover { color: #12424C; }
+  ::selection { background: #DCE4E6; }
+  a[style*="border-radius: 999px"], button { display: inline-block; line-height: 1.2; }
+  [data-navburger] { display: none !important; }
+  [data-navpanel] { display: none !important; }
+  @media (max-width: 768px) {
+    [data-navdesktop] { display: none !important; }
+    [data-navburger] { display: flex !important; }
+    [data-navpanel] { display: grid !important; }
+    [data-2col] { grid-template-columns: 1fr !important; }
+    [data-h1] { font-size: 38px !important; line-height: 1.15 !important; }
+    [data-h2] { font-size: 30px !important; line-height: 1.25 !important; }
+    [data-h1], [data-h2], [data-h3] { font-weight: 700 !important; }
+    [data-h3] { font-size: 26px !important; letter-spacing: 0.02em !important; }
+    p[style*="font-size: 20px"], li[style*="font-size: 20px"], dd[style*="font-size: 20px"], dt[style*="font-size: 20px"], a[style*="font-size: 20px"], span[style*="font-size: 20px"], div[style*="font-size: 20px"], label[style*="font-size: 20px"], input[style*="font-size: 20px"], textarea[style*="font-size: 20px"], button[style*="font-size: 20px"] { font-size: 16px !important; }
+    [data-stats] p { text-align: center !important; }
+    [data-stats] div > p:first-child { font-size: 30px !important; }
+    [data-sec][style*="padding: 96px 24px"], [data-sec] > div[style*="padding: 96px 24px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+    [data-sec] > div[style*="padding: 96px 24px 0"] { padding-bottom: 0 !important; }
+    [data-sec] > div[style*="padding: 32px 24px 96px"] { padding-top: 32px !important; padding-bottom: 48px !important; }
+    [data-hero] { padding-top: 32px !important; padding-bottom: 64px !important; }
+  }
+</style>
+</helmet>
+<div style="font-family: Karla, system-ui, sans-serif; color: #0F373E; background: #FFFFFF">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#" style="font-family: forum, serif; font-weight: 700; font-size: 20px; color: #0F373E">Fiona MacGregor</a>
+      <nav data-navdesktop="1" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 20px">
+        <a href="about-en.html" style="color: #0F373E">About</a>
+        <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
+        <a href="gestalt-en.html" style="color: #0F373E">Gestalt</a>
+        <a href="topics-en.html" style="color: #0F373E">Topics</a>
+        <a href="#kontakt" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 16px; letter-spacing: 0.04em"><a href="index.html" style="color: #3F6E77">SR</a><span style="color: #9FB6BA">/</span><span style="color: #154E59; font-weight: 600">EN</span></span>
+      </nav>
+      <button type="button" data-navburger="1" onClick="{{ toggleMenu }}" aria-label="Menu" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 12px; border: 1px solid #DCE4E6; border-radius: 8px; background: #FFFFFF; cursor: pointer">
+        <svg viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><g stroke="#154E59" stroke-width="1.5" stroke-linecap="round"><line x1="1" y1="1" x2="19" y2="1"></line><line x1="1" y1="7" x2="19" y2="7"></line><line x1="1" y1="13" x2="19" y2="13"></line></g></svg>
+      </button>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div data-navpanel="1" style="display: grid; gap: 24px; padding: 24px; border-top: 1px solid #DCE4E6; font-size: 20px; background: #FFFFFF">
+        <a href="about-en.html" style="color: #0F373E">About</a>
+          <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
+          <a href="gestalt-en.html" style="color: #0F373E">Gestalt</a>
+        <a href="topics-en.html" style="color: #0F373E">Topics</a>
+          <a href="#kontakt" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 16px; letter-spacing: 0.04em"><a href="index.html" style="color: #3F6E77">SR</a><span style="color: #9FB6BA">/</span><span style="color: #154E59; font-weight: 600">EN</span></span>
+      </div>
+    </sc-if>
+  </header>
+
+  <section data-hero="1" style="max-width: 1100px; margin: 0 auto; padding: 64px 24px 128px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center">
+      <div>
+        <p style="font-family: Karla, sans-serif; font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Gestalt psychotherapy · Edinburgh · Online</p>
+        <h1 data-h1="1" style="font-family: forum, serif; font-weight: 400; font-size: 60px; line-height: 1.1; margin: 0">A safe place to talk about what you need</h1>
+        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77"><span style="color: #3F6E77; font-family: Karla, sans-serif; font-size: 20px;">I work with young people and adults who want a better connection with themselves, their feelings and the people around them. <br><br>Radim uživo i onlajn. <br><br>The first conversation is free and commits you to nothing.</span></p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
+          <a href="#kontakt" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 20px; font-weight: 500" style-hover="background: #12424C">Book a free call</a>
+          <a href="therapy-en.html#kako-izgleda" style="padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 20px" style-hover="background: #DCE4E6">What therapy looks like</a>
+        </div>
+      </div>
+      <div style="aspect-ratio: 4 / 5; background: #DCE4E6; border: 1px solid #C6A15B; border-radius: 8px; overflow: hidden">
+        <img src="uploads/front-view-smiley-woman-posing-chair.jpg" alt="Fiona MacGregor" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block">
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="1" data-stats="1" style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">9</p><p style="font-size: 20px; line-height: 1.5; margin: 0">years working with clients</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">180+</p><p style="font-size: 20px; line-height: 1.5; margin: 0">people who have been in therapy with me</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">60</p><p style="font-size: 20px; line-height: 1.5; margin: 0">minutes per session</p></div>
+      <div style="display: grid; gap: 8px"><p style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0; color: #154E59">New Town</p><p style="font-size: 20px; line-height: 1.5; margin: 0">practice in Edinburgh, and online</p></div>
+    </div>
+  </section>
+
+  <section id="o-meni" data-sec="1" style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 64px; align-items: center">
+      <div style="aspect-ratio: 3 / 4; background: #DCE4E6; border: 1px solid #C6A15B; border-radius: 8px; overflow: hidden">
+        <img src="uploads/smiley-woman-outdoors-front-view.jpg" alt="Fiona MacGregor" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block">
+      </div>
+      <div>
+        <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">About me</p>
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0">Fiona MacGregor</h2>
+        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">I have worked as a gestalt psychotherapist since 2017. Before that I spent eight years in marketing, so I know well what it looks like when work eats everything else.</p>
+        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">I do not give advice in therapy. I will ask what you feel as you tell me, and what is happening in your body. That is usually where things that have not moved for years begin to move.</p>
+        <ul style="list-style: none; margin: 48px 0 0; padding: 24px 0 0; border-top: 1px solid #DCE4E6; display: grid; gap: 16px">
+          <li style="font-size: 20px; line-height: 1.5">Four-year training in gestalt psychotherapy, Scottish Gestalt Centre, Edinburgh</li>
+          <li style="font-size: 20px; line-height: 1.5">MA (Hons) in Psychology, University of Edinburgh</li>
+          <li style="font-size: 20px; line-height: 1.5">Regular supervision and personal therapy, registered member of COSCA and the UK Council for Psychotherapy</li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px">
+          <a href="about-en.html" style="padding: 16px 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #154E59; color: #154E59; font-size: 20px" style-hover="background: #DCE4E6">More about me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="terapija" data-sec="1" style="border-top: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px 0">
+      <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">ABOUT THERAPY</p>
+      <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch">It helps to know what you are getting into</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 48px">
+        <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px; background: #FFFFFF; display: flex; flex-direction: column">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">What is psychotherapy?</h3>
+          <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">A conversation with a trained person, once a week. Nothing you say leaves the room.</p>
+          <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">You don't have to be in crisis to come. It is enough that something has bothered you for a few months and simply will not pass.</p>
+          <a href="therapy-en.html" style="margin: 32px 0 0; align-self: flex-start; padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 20px" style-hover="background: #DCE4E6">More about psychotherapy</a>
+        </article>
+        <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px; background: #FFFFFF; display: flex; flex-direction: column">
+          <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">What is gestalt therapy?</h3>
+          <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">Gestalt is about what is happening here and now. How you breathe while you talk about your mother, where you tighten when you say you are fine.</p>
+          <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">We talk less about the past and try out more new ways for you to say what you usually leave unsaid.</p>
+          <a href="gestalt-en.html" style="margin: 32px 0 0; align-self: flex-start; padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 20px" style-hover="background: #DCE4E6">More about gestalt</a>
+        </article>
+      </div>
+      
+    </div>
+  </section>
+
+  <section data-sec="1">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: stretch" data-2col="1">
+      <article style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.2; margin: 0; max-width: 20ch">What is the goal of psychotherapy?</h3>
+        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">The goal of psychotherapy is not to become someone else, nor for someone to tell you how to live. The goal is to understand yourself better: your needs, feelings, boundaries, patterns of behaviour and the ways you build relationships with others.</p>
+        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Through that process you gain room to live more authentically.</p>
+        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Authenticity means living in line with yourself: recognising what you really feel, what you need and what matters to you, instead of automatically following other people's expectations or patterns you picked up over time.</p>
+        <p style="font-size: 20px; line-height: 1.55; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">It does not mean we will always know what we want, or always do the first thing that comes to mind. It means we have more awareness and more freedom to choose how we live.</p>
+      </article>
+      <aside style="border: 1px solid #DCE4E6; border-radius: 8px; padding: 32px; background: #DCE4E6; display: flex; flex-direction: column">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">What people most often come with</h3>
+        <ul style="list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px">
+          <li style="font-size: 20px; line-height: 1.5">Anxiety and tension</li>
+          <li style="font-size: 20px; line-height: 1.5">Sadness and low mood</li>
+          <li style="font-size: 20px; line-height: 1.5">Low self-confidence</li>
+          <li style="font-size: 20px; line-height: 1.5">Relationship difficulties</li>
+          <li style="font-size: 20px; line-height: 1.5">Trouble setting boundaries</li>
+          <li style="font-size: 20px; line-height: 1.5">Stress and overload</li>
+          <li style="font-size: 20px; line-height: 1.5">Loss and break-ups</li>
+          <li style="font-size: 20px; line-height: 1.5">Life changes and crises</li>
+          <li style="font-size: 20px; line-height: 1.5">Repeating patterns of behaviour</li>
+          <li style="font-size: 20px; line-height: 1.5">Self-doubt and uncertainty</li>
+          <li style="font-size: 20px; line-height: 1.5">Difficulty with emotions</li>
+          <li style="font-size: 20px; line-height: 1.5">Searching for yourself and personal growth</li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px">
+          <a href="topics-en.html" style="padding: 16px 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #154E59; color: #154E59; font-size: 20px" style-hover="background: #FFFFFF">More about these topics</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="utisci" data-sec="1" style="background: #154E59">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px">
+      <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #DCE4E6; margin: 0 0 24px">Testimonials</p>
+      <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0; max-width: 20ch; color: #FFFFFF">In my clients' words</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 48px">
+        <figure style="margin: 0; border-radius: 8px; padding: 32px; background: #FFFFFF">
+          <blockquote style="margin: 0; font-size: 20px; line-height: 1.55">I came because I could not sleep. Six months later I realised the problem was not sleep, but that I could not say no to anyone.</blockquote>
+          <figcaption style="margin-top: 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3F6E77">M. 34, anxiety</figcaption>
+        </figure>
+        <figure style="margin: 0; border-radius: 8px; padding: 32px; background: #FFFFFF">
+          <blockquote style="margin: 0; font-size: 20px; line-height: 1.55">I was afraid someone would tell me what to do. Emma only asked how I felt while I was talking. That surprised me.</blockquote>
+          <figcaption style="margin-top: 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3F6E77">S. 41, burnout</figcaption>
+        </figure>
+        <figure style="margin: 0; border-radius: 8px; padding: 32px; background: #FFFFFF">
+          <blockquote style="margin: 0; font-size: 20px; line-height: 1.55">I still have the same conversations with my mother. The difference is that they no longer knock me out for two days.</blockquote>
+          <figcaption style="margin-top: 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3F6E77">J. 27, family relationships</figcaption>
+        </figure>
+      </div>
+      <p style="font-size: 20px; line-height: 1.5; margin: 32px 0 0; color: #DCE4E6">Testimonials are published with clients' consent, with changed initials.</p>
+    </div>
+  </section>
+
+  <section id="zakazivanje" data-sec="1" style="border-top: 1px solid #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start">
+      <div>
+        
+        <h2 data-h2="1" style="font-family: forum, serif; font-weight: 400; font-size: 52px; line-height: 1.2; margin: 0">Practical details</h2>
+        <dl style="margin: 48px 0 0">
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">In person</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">18 Dundas Street, New Town, Edinburgh</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Online</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">Video call</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Duration</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">60 minutes</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Price</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">{{ cena }} per session</dd></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Intro call</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">30 minutes, free</dd></div>
+        </dl>
+      </div>
+      <div id="kontakt" style="border: 1px solid #DCE4E6; border-radius: 8px; background: #DCE4E6; padding: 32px; scroll-margin-top: 80px">
+        <h3 data-h3="1" style="font-family: forum, serif; font-weight: 400; font-size: 32px; line-height: 1.3; margin: 0">Book a free intro call</h3>
+        <p style="font-size: 20px; line-height: 1.55; margin: 16px 0 0; color: #3F6E77">Write me a couple of sentences about what is troubling you and when suits you. I reply within 24 hours.</p>
+        <div style="display: grid; gap: 16px; margin-top: 32px">
+          <input type="text" placeholder="Name" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E">
+          <input type="text" placeholder="Phone or email" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E">
+          <textarea rows="4" placeholder="What brings you here" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E; resize: vertical"></textarea>
+          <button type="button" style="font-family: Karla, sans-serif; font-size: 20px; font-weight: 500; padding: 16px 32px; border: none; border-radius: 999px; background: #154E59; color: #FFFFFF; cursor: pointer" style-hover="background: #12424C">Send message</button>
+        </div>
+        <p style="font-size: 20px; line-height: 1.5; margin: 24px 0 0; color: #3F6E77">Or call <a href="tel:+441314960123">0131 496 0123</a>. If you are in crisis and need help right now, call Samaritans on 116 123 or Breathing Space on 0800 83 85 87.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #DCE4E6; background: #DCE4E6">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; font-size: 20px">
+      <div style="display: grid; gap: 8px">
+        <span style="font-family: forum, serif; font-weight: 700">Fiona MacGregor</span>
+        <span style="color: #3F6E77">18 Dundas Street, Edinburgh</span>
+        <span style="color: #3F6E77">0131 496 0123</span>
+      </div>
+      <div style="display: grid; gap: 8px">
+        <a href="about-en.html" style="color: #0F373E">About</a>
+        <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
+        <a href="gestalt-en.html" style="color: #0F373E">Gestalt</a>
+        <a href="topics-en.html" style="color: #0F373E">Topics</a>
+      </div>
+      <div style="display: grid; gap: 8px; color: #3F6E77">
+        <a href="#" style="color: #0F373E">Instagram</a>
+        
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;cena&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;£60&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      cena: this.props.cena ?? "£60",
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
+</script>
+</body>
+</html>
