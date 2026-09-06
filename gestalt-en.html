@@ -36,7 +36,7 @@
     [data-2col] { grid-template-columns: 1fr !important; }
     [data-sec][style*="padding: 96px 24px"], [data-sec] > div[style*="padding: 96px 24px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
     [data-sec] > div[style*="padding: 96px 24px 0"] { padding-bottom: 0 !important; }
-    [data-sec] > div[style*="padding: 32px 24px 96px"] { padding-top: 32px !important; padding-bottom: 48px !important; }
+    [data-sec] > div[style*="padding: 32px 24px"] { padding-top: 32px !important; padding-bottom: 48px !important; }
     [data-hero] { padding-top: 32px !important; padding-bottom: 64px !important; }
   }
 </style>
@@ -44,14 +44,14 @@
 <div style="font-family: Karla, system-ui, sans-serif; color: #0F373E; background: #FFFFFF">
 
   <header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #DCE4E6">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
-      <a href="index-en.html" style="font-family: forum, serif; font-weight: 700; font-size: 20px; color: #0F373E">Fiona MacGregor</a>
-      <nav data-navdesktop="1" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 20px">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="index-en.html" style="font-family: forum, serif; font-weight: 700; font-size: 16px; color: #0F373E">Fiona MacGregor</a>
+      <nav data-navdesktop="1" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-size: 16px">
         <a href="about-en.html" style="color: #0F373E">About</a>
         <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
         <a href="gestalt-en.html" style="color: #154E59; font-weight: 500">Gestalt</a>
         <a href="topics-en.html" style="color: #0F373E">Topics</a>
-        <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
+        <a href="#zakazivanje" style="padding: 10px 20px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
         <span style="display: flex; align-items: center; gap: 8px; font-size: 16px; letter-spacing: 0.04em"><a href="gestalt.html" style="color: #3F6E77">SR</a><span style="color: #9FB6BA">/</span><span style="color: #154E59; font-weight: 600">EN</span></span>
       </nav>
       <button type="button" data-navburger="1" onClick="{{ toggleMenu }}" aria-label="Menu" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 12px; border: 1px solid #DCE4E6; border-radius: 8px; background: #FFFFFF; cursor: pointer">
@@ -59,25 +59,25 @@
       </button>
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <div data-navpanel="1" style="display: grid; gap: 24px; padding: 24px; border-top: 1px solid #DCE4E6; font-size: 20px; background: #FFFFFF">
+      <div data-navpanel="1" style="display: grid; gap: 20px; padding: 20px 24px; border-top: 1px solid #DCE4E6; font-size: 16px; background: #FFFFFF">
         <a href="about-en.html" style="color: #0F373E">About</a>
           <a href="therapy-en.html" style="color: #0F373E">Therapy</a>
           <a href="gestalt-en.html" style="color: #154E59; font-weight: 500">Gestalt</a>
         <a href="topics-en.html" style="color: #0F373E">Topics</a>
-          <a href="#zakazivanje" style="padding: 12px 24px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
+          <a href="#zakazivanje" style="padding: 10px 20px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-weight: 500" style-hover="background: #12424C">Book a call</a>
         <span style="display: flex; align-items: center; gap: 8px; font-size: 16px; letter-spacing: 0.04em"><a href="gestalt.html" style="color: #3F6E77">SR</a><span style="color: #9FB6BA">/</span><span style="color: #154E59; font-weight: 600">EN</span></span>
       </div>
     </sc-if>
   </header>
 
-  <section data-hero="1" style="max-width: 1100px; margin: 0 auto; padding: 64px 24px 96px">
+  <section data-hero="1" style="max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px">
     <p style="font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; color: #154E59; margin: 0 0 24px">Gestalt therapy</p>
     <h1 data-h1="1" style="font-family: forum, serif; font-weight: 400; font-size: 60px; line-height: 1.1; margin: 0; max-width: 22ch">What is gestalt therapy?</h1>
     <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Gestalt therapy is a path towards greater awareness, wholeness, authenticity and the freedom to live in line with ourselves.</p>
     <p style="font-size: 20px; line-height: 1.6; margin: 24px 0 0; max-width: 65ch; color: #3F6E77">Gestalt is a word of German origin for the idea that the whole is more than the simple sum of its parts. In gestalt therapy we do not look at a person through one problem, symptom or trait, but as a whole.</p>
     <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px">
-      <a href="#zakazivanje" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 20px; font-weight: 500" style-hover="background: #12424C">Book a free call</a>
-      <a href="therapy-en.html" style="padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 20px" style-hover="background: #DCE4E6">What is psychotherapy</a>
+      <a href="#zakazivanje" style="padding: 16px 32px; border-radius: 999px; background: #154E59; color: #FFFFFF; font-size: 16px; font-weight: 500" style-hover="background: #12424C">Book a free call</a>
+      <a href="therapy-en.html" style="padding: 16px 32px; border-radius: 999px; border: 1px solid #3F6E77; color: #0F373E; font-size: 16px" style-hover="background: #DCE4E6">What is psychotherapy</a>
     </div>
   </section>
 
@@ -154,7 +154,7 @@
           <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid #DCE4E6; border-bottom: 1px solid #DCE4E6"><dt style="min-width: 180px; font-size: 20px; color: #3F6E77">Intro call</dt><dd style="margin: 0; font-size: 20px; line-height: 1.5">30 minutes, free</dd></div>
         </dl>
         <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px">
-          <a href="index-en.html" style="padding: 16px 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #154E59; color: #154E59; font-size: 20px" style-hover="background: #DCE4E6">Back to home</a>
+          <a href="index-en.html" style="padding: 16px 32px; border-radius: 999px; background: #FFFFFF; border: 1px solid #154E59; color: #154E59; font-size: 16px" style-hover="background: #DCE4E6">Back to home</a>
         </div>
       </div>
       <div style="border: 1px solid #DCE4E6; border-radius: 8px; background: #DCE4E6; padding: 32px">
@@ -164,7 +164,7 @@
           <input type="text" placeholder="Name" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E">
           <input type="text" placeholder="Phone or email" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E">
           <textarea rows="4" placeholder="What brings you here" style="font-family: Karla, sans-serif; font-size: 20px; padding: 16px; border: 1px solid #3F6E77; border-radius: 8px; background: #FFFFFF; color: #0F373E; resize: vertical"></textarea>
-          <button type="button" style="font-family: Karla, sans-serif; font-size: 20px; font-weight: 500; padding: 16px 32px; border: none; border-radius: 999px; background: #154E59; color: #FFFFFF; cursor: pointer" style-hover="background: #12424C">Send message</button>
+          <button type="button" style="font-family: Karla, sans-serif; font-size: 16px; font-weight: 500; padding: 16px 32px; border: none; border-radius: 999px; background: #154E59; color: #FFFFFF; cursor: pointer" style-hover="background: #12424C">Send message</button>
         </div>
         <p style="font-size: 20px; line-height: 1.5; margin: 24px 0 0; color: #3F6E77">Or call <a href="tel:+441314960123">0131 496 0123</a>. If you are in crisis and need help right now, call Samaritans on 116 123 or Breathing Space on 0800 83 85 87.</p>
       </div>
